@@ -27,8 +27,6 @@ end
 defmodule RealHTTPClientTest do
   use ExUnit.Case
 
-  import Hammox
-
   test "get/1 returns Finch Response" do
     get_1 = Hammox.protect({HTTPClient, :get, 1}, HammoxBehaviour)
     assert {:ok, %Finch.Response{}} = get_1.("https://google.com")
